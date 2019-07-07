@@ -1,0 +1,20 @@
+.showHideButton {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 0;
+    outline: 0;
+    color: #6c757d;
+    background-color: transparent;
+}
+
+.showHideButton:hover {
+    cursor: pointer;
+    color: #5c656d;
+}
+
+.sidebar-logo {
+    width: 50px;
+    padding-top: 10px;
+    padding-bottom: 5px
+}

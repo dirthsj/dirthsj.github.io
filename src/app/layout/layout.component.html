@@ -1,0 +1,26 @@
+<table style="width:100%;height:100%">
+    <tr height=63>
+        <app-topnav></app-topnav>
+    </tr>
+    <tr>
+        <table style="width:100%;height:100%">
+            <tr style="vertical-align: top">
+                <th>
+                    <ng-content></ng-content>
+                </th>
+                <td [width]="show ? 250 : 50">
+                    <app-sidebar [hidden]="!show"></app-sidebar>
+                    <a [hidden]="show" href="https://linkedin.com/in/stevendirth">
+                        <img class="sidebar-logo" src="assets/LinkedInLogo.png">
+                    </a>
+                    <a [hidden]="show" href="https://github.com/dirthsj">
+                        <img class="sidebar-logo" src="assets/GitHub-Mark-64px.png">
+                    </a>
+                    <button class="showHideButton" (click)="show = !show">
+                        <fa-icon [icon]="show ? 'angle-double-right' : 'angle-double-left'" size="3x"></fa-icon>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </tr>
+</table>
