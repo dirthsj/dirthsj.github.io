@@ -2,8 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://stevendirth.com/home</loc>
+  </url>
+  <url>
     <loc>https://stevendirth.com/csm</loc>
+  </url>
+  <url>
     <loc>https://stevendirth.com/resume</loc>
+  </url>
+  <url>
     <loc>https://stevendirth.com/work</loc>
   </url>
 </urlset>
