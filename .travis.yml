@@ -7,17 +7,8 @@ dist: trusty
 branches:
   only:
   - source
-
+before_script:
+  - npm install -g angular-cli-ghpages
 script:
   - ng build --prod --base-href https://stevendirth.com/
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  keep_history: true
-  local_dir: dist/personal-website-seven
-  target_branch: master
-  fqdn: stevendirth.com
-  on:
-    branch: source
+  - ngh --dir=dist/personal-website-seven --repo=$GITHUB_TOKEN@github.com/dirthsj/dirthsj.github.io.git
