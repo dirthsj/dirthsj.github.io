@@ -1,0 +1,23 @@
+language: node_js
+dist: trusty
+
+branches:
+  only:
+  - source
+
+before_script:
+  - npm install
+
+script:
+  - ng build --prod --base-href https://stevendirth.com
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local_dir: dist/personal-website-seven
+  target_branch: master
+  fqdn: https://stevendirth.com
+  on:
+    branch: source

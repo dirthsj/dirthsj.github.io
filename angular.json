@@ -85,6 +85,7 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
+              "src/sitemap.xml",
               "src/assets"
             ]
           }
