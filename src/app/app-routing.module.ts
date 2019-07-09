@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'work', component: WorkComponent },
   { path: 'csm', component: CsmComponent },
   { path: 'resume', component: ResumeComponent },
+  { path: '*', redirectTo: 'home', pathMatch: 'prefix' },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
