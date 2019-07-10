@@ -11,4 +11,5 @@ before_script:
   - npm install -g angular-cli-ghpages
 script:
   - ng build --prod --base-href https://stevendirth.com/
+  - ./ghpages_spa_fix.sh
   - ngh --dir=dist/personal-website-seven --repo=https://$GITHUB_TOKEN@github.com/dirthsj/dirthsj.github.io.git --branch master --cname stevendirth.com
