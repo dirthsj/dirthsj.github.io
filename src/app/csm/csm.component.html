@@ -1,31 +1,33 @@
-<h1>Cardinal Space Mining</h1>
-<p>Cardinal Space Mining is a club dedicated to the annual <a href="https://www.nasa.gov/offices/education/centers/kennedy/technology/nasarmc.html">NASA Robotics Mining Competition</a>.</p>
-<p>We build a robot from scratch, fabricating PCBS, writing client and embedded code, welding and/or riviting the physical components, etc.</p>
-<p>
-I'm currently the <b>Controls Project Director</b> for Cardinal Space Mining. I oversee all electrical and software work for the club.
-This includes the development of both Asteroid and our (as of yet unnamed) robot's embedded software.
-Another large project is our SPARC program - a series of custom arduino-compatible PCBs which
-allow swapping sensors between ports on the main robot computer and even adding sensors without any changes to the robot or client software.  These PCBS are designed
-by us and sent to an external company for manufacturing, then soldered and programmed by us.  In addition to the SPARC boards, we use an adapter card for our
-MicroZed to provide ports for the SPARC boards, motor controllers, and a few GPIO options.  Speaking of the MicroZed, we use a customized petalinux build which configures
-the board for numerous serial ports and other helpful functionality.  These ports are then used by the embedded software (built using c++14 and boost) to control the robot.
-Asteroid, our client software, is the final piece of the robot-controlling puzzle.  It's also written in C++, but uses the Qt framework (as well as boost, to enable code sharing with the embedded software).
-Asteroid utilizes our custom UDP-based network protocols to send control information and xbox controller state to the embedded system.
-It also displays information about the sensors connected to the robot.
-</p>
-<p>
-I joined the club immediately after starting college, having previous experience in <a href="https://www.firstinspires.org/robotics/frc">FRC</a>
-and wanting to continue my passion for robotics.  During that semeseter, I co-developed Asteroid, the client software for controlling our robot. 
-During my second semester, I was the sole developer of Asteroid.  I also helped other members developing the embedded software for MARS I: Pavonis,
-our robot for that year.
-</p>
-<p>
-During the following summer, I added continuous integration, unit tests, and documentation to some of our projects.
-</p>
-<p>
-Sophomore year was rather interesting, as NASA announced they would not be holding the competition during the normal time,
-then cancelled it alltogether and announced a "virtual" competition.
-Alabama State University offered to host an unofficial competition, however I chose not to attend as it was during finals week.
-During this year I spent the majority of my time developing the embedded software for MARS II: Mariners,
-as well as assisting the Controls Project Director with the software aspect of the position.
-</p>
+<div style="margin-top: 10px;margin-left: 10px;margin-right: 10px;color:#5c5c5c;font-weight:normal">
+    <h1>Cardinal Space Mining</h1>
+    <p>Cardinal Space Mining is a club dedicated to the annual <a href="https://www.nasa.gov/offices/education/centers/kennedy/technology/nasarmc.html">NASA Robotics Mining Competition</a>.</p>
+    <p>We build a robot from scratch, fabricating PCBS, writing client and embedded code, welding and/or riviting the physical components, etc.</p>
+    <p>
+    I'm currently the <b>Controls Project Director</b> for Cardinal Space Mining. I oversee all electrical and software work for the club.
+    This includes the development of both Asteroid and our (as of yet unnamed) robot's embedded software.
+    Another large project is our SPARC program - a series of custom arduino-compatible PCBs which
+    allow swapping sensors between ports on the main robot computer and even adding sensors without any changes to the robot or client software.  These PCBS are designed
+    by us and sent to an external company for manufacturing, then soldered and programmed by us.  In addition to the SPARC boards, we use an adapter card for our
+    MicroZed to provide ports for the SPARC boards, motor controllers, and a few GPIO options.  Speaking of the MicroZed, we use a customized petalinux build which configures
+    the board for numerous serial ports and other helpful functionality.  These ports are then used by the embedded software (built using c++14 and boost) to control the robot.
+    Asteroid, our client software, is the final piece of the robot-controlling puzzle.  It's also written in C++, but uses the Qt framework (as well as boost, to enable code sharing with the embedded software).
+    Asteroid utilizes our custom UDP-based network protocols to send control information and xbox controller state to the embedded system.
+    It also displays information about the sensors connected to the robot.
+    </p>
+    <p>
+    I joined the club immediately after starting college, having previous experience in <a href="https://www.firstinspires.org/robotics/frc">FRC</a>
+    and wanting to continue my passion for robotics.  During that semeseter, I co-developed Asteroid, the client software for controlling our robot. 
+    During my second semester, I was the sole developer of Asteroid.  I also helped other members developing the embedded software for MARS I: Pavonis,
+    our robot for that year.
+    </p>
+    <p>
+    During the following summer, I added continuous integration, unit tests, and documentation to some of our projects.
+    </p>
+    <p>
+    Sophomore year was rather interesting, as NASA announced they would not be holding the competition during the normal time,
+    then cancelled it alltogether and announced a "virtual" competition.
+    Alabama State University offered to host an unofficial competition, however I chose not to attend as it was during finals week.
+    During this year I spent the majority of my time developing the embedded software for MARS II: Mariners,
+    as well as assisting the Controls Project Director with the software aspect of the position.
+    </p>
+</div>
