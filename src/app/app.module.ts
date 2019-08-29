@@ -7,9 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 
-
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faAngleDoubleRight, faAngleDoubleLeft, faBars } from '@fortawesome/free-solid-svg-icons';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,6 +49,7 @@ import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
     BrowserAnimationsModule,
     MatListModule,
     MatButtonModule,
+    PdfViewerModule,
     AppRoutingModule
   ],
   entryComponents: [MobileMenuComponent],
