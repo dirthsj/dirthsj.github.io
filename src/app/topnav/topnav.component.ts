@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 
 @Component({
   selector: 'app-topnav',
@@ -12,9 +14,21 @@ export class TopnavComponent implements OnInit {
     { path: '/work', label: 'Work Experience' },
     { path: '/resume', label: 'Resume' }
   ];
-  constructor() { }
+  public desktop: boolean = true;
+  constructor(
+    private mobileMenuRef: MatBottomSheet
+  ) { }
 
   ngOnInit() {
+    this.desktop = window.screen.width > window.screen.height;
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.desktop = window.screen.width > window.screen.height;
+  }
+
+  openMobileMenu() {
+    this.mobileMenuRef.open(MobileMenuComponent);
+  }
 }
