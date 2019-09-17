@@ -4,5 +4,8 @@
 <br/>
 <pdf-viewer src="/assets/resume.pdf" 
 [render-text]="true"
-style="display: block;"
+[show-borders]="true"
+[autoresize]="true"
+[original-size]="false"
+style="display: block;max-width: calc(100vw - 100px)"
 ></pdf-viewer>
