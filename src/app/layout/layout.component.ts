@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faAngleDoubleRight, faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-layout',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 
 })
 export class LayoutComponent implements OnInit {
+  faAngleDoubleRight = faAngleDoubleRight;
+  faAngleDoubleLeft = faAngleDoubleLeft;
   show: boolean = true;
   sidebarWidth: number = 250;
   width: number = 0;
