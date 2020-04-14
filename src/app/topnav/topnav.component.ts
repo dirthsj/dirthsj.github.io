@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 
 @Component({
@@ -10,11 +10,12 @@ import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 export class TopnavComponent implements OnInit {
   public navLinks = [
     { path: '/home', label: 'Home' },
-    { path: '/csm', label: "Cardinal Space Mining" },
+    { path: '/csm', label: 'Cardinal Space Mining' },
     { path: '/work', label: 'Work Experience' },
-    { path: '/resume', label: 'Resume' }
+    { path: '/resume', label: 'Resume' },
+    { path: '/projects', label: 'Projects' }
   ];
-  public desktop: boolean = true;
+  public desktop = true;
   constructor(
     private mobileMenuRef: MatBottomSheet
   ) { }

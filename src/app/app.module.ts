@@ -25,6 +25,7 @@ import { CsmComponent } from './csm/csm.component';
 import { ResumeComponent } from './resume/resume.component';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
     CsmComponent,
     ResumeComponent,
     MobileMenuComponent,
+    ProjectsComponent,
   ],
   imports: [
     FontAwesomeModule,
