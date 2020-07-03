@@ -8,15 +8,11 @@ script:
   - dotnet publish -c Release -o ./publish
   - git config --global user.name "$NAME"
   - git config --global user.email "$EMAIL"
-  - cd $(bin\Debug\netstandard2.1\publish)
 
 deploy:
-  provider: pages
-  cleanup: false
+  provider: pages:git
+  token: $GITHUB_TOKEN
+  edge: true
+  target_branch: master
   fqdn: stevendirth.com
   committer_from_gh: true
-  local_dir: ./publish
-  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  keep_history: true
-  on:
-    branch: master
