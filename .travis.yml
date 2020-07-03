@@ -6,8 +6,6 @@ branches:
     - blazor
 script:
   - dotnet publish -c Release -o ./publish
-  - git config --global user.name "$NAME"
-  - git config --global user.email "$EMAIL"
 
 deploy:
   provider: pages:git
