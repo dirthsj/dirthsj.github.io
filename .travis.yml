@@ -1,0 +1,22 @@
+﻿language: csharp
+mono: none
+dotnet: 2.1.502
+branches:
+	only:
+		- blazor
+script:
+	- dotnet publish -c Release -o ./publish
+	- git config --global user.name "$NAME"
+	- git config --global user.email "$EMAIL"
+	- cd $(bin\Debug\netstandard2.1\publish)
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  fqdn: stevendirth.com
+  commiter_from_gh: true
+  local_dir: ./publish
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: master
