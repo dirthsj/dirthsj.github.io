@@ -14,6 +14,6 @@ deploy:
   target_branch: master
   fqdn: stevendirth.com
   committer_from_gh: true
-  local_dir: ./publish
+  local_dir: ./publish/wwwroot
   on:
     branch: blazor
