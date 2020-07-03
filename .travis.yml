@@ -12,9 +12,9 @@ script:
 
 deploy:
   provider: pages
-  skip_cleanup: true
+  cleanup: false
   fqdn: stevendirth.com
-  commiter_from_gh: true
+  committer_from_gh: true
   local_dir: ./publish
   github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep_history: true
