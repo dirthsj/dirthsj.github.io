@@ -16,3 +16,7 @@ deploy:
   target_branch: master
   fqdn: stevendirth.com
   committer_from_gh: true
+  on:
+    branches:
+      only:
+        - blazor
