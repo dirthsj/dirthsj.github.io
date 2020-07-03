@@ -17,6 +17,4 @@ deploy:
   fqdn: stevendirth.com
   committer_from_gh: true
   on:
-    branches:
-      only:
-        - blazor
+    branch: blazor
