@@ -6,6 +6,7 @@ branches:
     - blazor
 script:
   - dotnet publish -c Release -o ./publish
+  - touch ./publish/wwwroot/.nojekyll
 
 deploy:
   provider: pages:git
