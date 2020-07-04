@@ -5,9 +5,7 @@ branches:
   only:
     - blazor
 script:
-  - dotnet restore
-  - dotnet build --no-restore
-  - dotnet publish -c Release -o ./publish --no-build
+  - dotnet publish -c Release -o ./publish
   - touch ./publish/wwwroot/.nojekyll
 
 deploy:
