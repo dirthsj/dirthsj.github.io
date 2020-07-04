@@ -1,11 +1,12 @@
 language: csharp
+solution: PersonalWebsiteBlazor.sln
 mono: none
 dotnet: 3.1
 branches:
   only:
     - blazor
 script:
-  - dotnet publish -c Release -o ./publish
+  - dotnet publish -c Release -o ./publish --no-build
   - touch ./publish/wwwroot/.nojekyll
 
 deploy:
