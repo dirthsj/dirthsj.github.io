@@ -11,7 +11,8 @@ script:
 deploy:
   provider: pages
   token: $GITHUB_TOKEN
-  cleanup: false
+  skip_cleanup: true
+  keep_history: false
   target_branch: master
   fqdn: stevendirth.com
   committer_from_gh: true
