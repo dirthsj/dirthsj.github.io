@@ -1,0 +1,41 @@
+﻿@page "/resume"
+@inject IJSRuntime JSRuntime
+@inject HttpClient http
+@using System.Text.Json.Serialization
+@using System.Net.Http.Headers
+
+<h1>Resume - <a href="@resumePdf " download>Download</a></h1>
+<canvas id="@canvasId">
+
+</canvas>
+@code {
+    private string canvasId = Guid.NewGuid().ToString();
+    private string resumePdf = "/assets/resume.pdf";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadPdf();
+    }
+
+    private async Task LoadPdf()
+    {
+        await JSRuntime.InvokeVoidAsync("previewPdf", resumePdf, 1, canvasId);
+    }
+
+    private class GithubReleaseResponse
+    {
+        [JsonPropertyName("assets_url")]
+        public string AssetsUrl { get; set; }
+    }
+
+    private class GithubAssetsResponse
+    {
+        [JsonPropertyName("url")]
+        public string Url { get; set; }
+    }
+
+    private class PdfData
+    {
+        public string data { get; set; }
+    }
+}
