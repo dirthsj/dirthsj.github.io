@@ -9,9 +9,9 @@ script:
   - touch ./publish/wwwroot/.nojekyll
 
 deploy:
-  provider: pages:git
+  provider: pages
   token: $GITHUB_TOKEN
-  edge: true
+  cleanup: false
   target_branch: master
   fqdn: stevendirth.com
   committer_from_gh: true
