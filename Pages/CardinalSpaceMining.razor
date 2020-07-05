@@ -1,37 +1,3 @@
 ﻿@page "/csm"
-@inject HttpClient http
 
-@if (posts == null)
-{
-    <p>Loading...</p>
-}
-else
-{
-    @foreach (var post in posts)
-    {
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">@post.Title</h5>
-                <p class="card-text">@post.Body</p>
-                @foreach (var link in post.Links)
-                {
-                    <a href="@link.Value" class="btn btn-primary">@link.Key</a>
-                }
-            </div>
-        </div>
-        <br />
-    }
-}
-
-
-@code {
-    private static Post[] posts;
-    private class Post
-    {
-        public string Title { get; set; }
-        public string Body { get; set; }
-        public Dictionary<string, string> Links { get; set; }
-    }
-
-    protected override async Task OnInitializedAsync() => posts ??= await http.GetFromJsonAsync<Post[]>("/assets/CardinalSpaceMining.json");
-}
+<PostElement DataUrl="/assets/CardinalSpaceMining.json"></PostElement>

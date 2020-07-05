@@ -1,0 +1,33 @@
+@inject HttpClient Http
+@using PersonalWebsiteBlazor.Models
+
+@if (_posts == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    @foreach (var post in _posts)
+    {
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@post.Title</h5>
+                <p class="card-text">@post.Body</p>
+                @foreach (var link in post.Links)
+                {
+                    <a href="@link.Value" class="btn btn-primary">@link.Key</a>
+                }
+            </div>
+        </div>
+        <br />
+    }
+}
+
+@code {
+    [Parameter]
+    public string DataUrl { get; set; }
+
+    private Post[] _posts;
+    
+    protected override async Task OnInitializedAsync() => _posts ??= await Http.GetFromJsonAsync<Post[]>(DataUrl);
+}
