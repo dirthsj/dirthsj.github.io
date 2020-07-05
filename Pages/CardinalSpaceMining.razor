@@ -1,4 +1,29 @@
 ﻿@page "/csm"
+@inject HttpClient http
 
-<h1>Under Construction</h1>
+@foreach (var post in posts)
+{
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">@post.Title</h5>
+            <p class="card-text">@post.Body</p>
+            @foreach (var link in post.Links)
+            {
+                <a href="@link.Value" class="btn btn-primary">@link.Key</a>
+            }
+        </div>
+    </div>
+    <br />
+}
 
+@code {
+    private List<Post> posts = new List<Post>();
+    private class Post
+    {
+        public string Title { get; set; }
+        public string Body { get; set; }
+        public Dictionary<string, string> Links { get; set; }
+    }
+
+    protected override async Task OnInitializedAsync() => posts.AddRange(await http.GetFromJsonAsync<Post[]>("/assets/CardinalSpaceMining.json"));
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "title": "What is Cardinal Space Mining?",
+    "body": "Cardinal Space Mining (formerly known as Cyclone Space Mining) is an club at Iowa State University that competes in the NASA Robotic Mining Competition (NASA RMC). The club is focused around designing, manufacturing, and programming a robot to compete at the Kennedy Space Center. Mechanical design is done using Solidworks and Grabcad. Software is stored on GitLab and written using C++. Firmware is handled by Xilinx Vivado. Electrical design uses a variety of platforms, but focuses on CircuitMaker.  We design three layers of software: A desktop client (Asteroid), an embedded linux application (Pavonis), and distributed sensing nodes based on Ardunio (SPARC Boards).",
+    "links": {
+      "Cardinal Space Mining at ISU": "https://www.stuorg.iastate.edu/site/spacemining",
+      "NASA Robotic Mining Competition": "https://www.nasa.gov/offices/education/centers/kennedy/technology/nasarmc.html"
+    }
+  },
+  {
+    "title": "Controls Project Director",
+    "body": "I was elected the Controls Project Director of CSM for the 2019-2020 school year. This position put me in charge of all electrical and software engineering aspects of the robot. This included the implementation of a power system, sensing system, autonomous navigation system, and driver control.",
+    "links": {}
+  },
+  {
+    "title": "Asteroid",
+    "body": "Asteroid was the first program I worked on for CSM. It is a desktop application written in C++ using the Qt and boost frameworks. Some key features include robot discovery and selection (allowing multiple robots and clients to operate on the same network) and sensor discovery and dynamic widget creation (allowing new sensors to be added to the robot with no client side changes). Asteroid also shares several of it's libraries with our robot-side code, a change I introduced through the use of git submodules.",
+    "links": {
+      "Qt Framework": "https://www.qt.io/",
+      "Boost Framework": "https://www.boost.org/"
+    }
+  },
+  {
+    "title": "MARS Pavonis",
+    "body": "MARS Pavonis was the first (and only) robot that I have competed with in the last three years. We competed with it in the 2017-2018 NASA RMC Competition, placing 2nd overall in the competition. Unfortunately, the 2018-2019 competition was cancelled due to the 50th Anniversary of the Appollo program, and the 2020-2021 competition was cancelled due to COVID-19. As a freshman, I was lucky to be included on the competition team and earned my position by being one of the most prolific contributors to Asteroid and the Pavonis software.",
+    "links": {
+      "NASA RMC 2017 Score Summary": "https://www.nasa.gov/sites/default/files/atoms/files/rmc2017_scoresummary.pdf"
+    }
+  },
+  {
+    "title": "SPARC Boards",
+    "body": "SPARC Boards are custom PCBs developed by CSM's electrical engineering team. They are based on the ATmega32u4 microcontroller, similar to the Arduino Leonardo and feature customized connectors and differential serial. Unfortunately, the SPARC Board initiative has not been very successful in implementation, due to excessive byte errors (cause unkonwn). The software has, nonetheless, been proven to work on a standard Arduino and is capable of transmitting multiple sensors (with metadata such as measurement units and name) to the Xilinx MicroZed serving as the brain of our robot. They are not hot-swappable, however it is possible to add or remove entire SPARC Boards or individual sensors without modifying the sofware or configuration of the MicroZed or Asteroid, allowing for rapid iteration of sensing systems.",
+    "links": {
+      "Arduino Leonardo": "https://www.arduino.cc/en/Main/Arduino_BoardLeonardo"
+    }
+  },
+  {
+    "title": "Xilinx MicroZed",
+    "body": "The Xilinx MicroZed is a development board featuring an ARM Processor and an FPGA. The board runs a customizable linux distribution known as PetaLinux. CSM has developed our own firmware to turn most of the FPGA into serial ports, which we use to talk to our MBL1660A motor controllers and SPARC Boards.",
+    "links": {
+      "Xilinx MicroZed": "http://zedboard.org/product/microzed",
+      "PetaLinux SDK": "https://www.xilinx.com/products/design-tools/embedded-software/petalinux-sdk.html",
+      "BML1660A": "https://www.roboteq.com/products/products-brushless-dc-motor-controllers/kbl-mbl-family/mbl1660a-detail"
+    }
+  }
+]
