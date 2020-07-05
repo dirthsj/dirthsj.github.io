@@ -40,7 +40,7 @@
     "links": {
       "Xilinx MicroZed": "http://zedboard.org/product/microzed",
       "PetaLinux SDK": "https://www.xilinx.com/products/design-tools/embedded-software/petalinux-sdk.html",
-      "BML1660A": "https://www.roboteq.com/products/products-brushless-dc-motor-controllers/kbl-mbl-family/mbl1660a-detail"
+      "MBL1660A": "https://www.roboteq.com/products/products-brushless-dc-motor-controllers/kbl-mbl-family/mbl1660a-detail"
     }
   }
 ]
