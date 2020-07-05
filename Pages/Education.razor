@@ -1,3 +1,11 @@
 ﻿@page "/education"
+@inject HttpClient Http
+@using PersonalWebsiteBlazor.Models;
 
-<PostElement DataUrl="/assets/Education.json"/>
+<PostElement Posts="@_posts" />
+
+@code {
+    private static Post[] _posts;
+
+    protected override async Task OnInitializedAsync() => _posts ??= await Http.GetFromJsonAsync<Post[]>("/assets/Education.json");
+}
