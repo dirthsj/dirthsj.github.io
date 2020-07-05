@@ -1,41 +1,10 @@
 ﻿@page "/resume"
-@inject IJSRuntime JSRuntime
-@inject HttpClient http
-@using System.Text.Json.Serialization
 
-<h1>Resume - <a href="@resumePdf " download>Download</a></h1>
+<h1>Resume - <a href="@ResumePdf " download>Download</a></h1>
 <div style="position: relative;width: 100%;padding-top: 130%"> @* 8.5:11 aspect ratio *@ 
     <iframe style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%" src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://stevendirth.com/assets/resume.pdf"></iframe>
 </div>
 
 @code {
-    private string canvasId = Guid.NewGuid().ToString();
-    private string resumePdf = "/assets/resume.pdf";
-
-    protected override async Task OnInitializedAsync()
-    {
-        // await LoadPdf();
-    }
-
-    private async Task LoadPdf()
-    {
-        await JSRuntime.InvokeVoidAsync("previewPdf", resumePdf, 1, canvasId);
-    }
-
-    private class GithubReleaseResponse
-    {
-        [JsonPropertyName("assets_url")]
-        public string AssetsUrl { get; set; }
-    }
-
-    private class GithubAssetsResponse
-    {
-        [JsonPropertyName("url")]
-        public string Url { get; set; }
-    }
-
-    private class PdfData
-    {
-        public string data { get; set; }
-    }
+    private const string ResumePdf = "/assets/resume.pdf";
 }
