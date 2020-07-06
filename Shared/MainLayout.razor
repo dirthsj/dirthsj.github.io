@@ -8,10 +8,29 @@
     <div class="top-row px-4" style="z-index: 2">
         <LinkedIn />
         <GitHub />
-        <a href="https://travis-ci.org/github/dirthsj/dirthsj.github.io"><img src="https://travis-ci.org/dirthsj/dirthsj.github.io.svg?branch=blazor" /></a>
+        <a href="https://travis-ci.org/github/dirthsj/dirthsj.github.io"><img src="@_travisImageUrl" /></a>
     </div>
 
     <div class="content px-4">
         @Body
     </div>
 </div>
+
+@code {
+    private const string TRAVIS_IMG_BASE_URL = "https://travis-ci.org/dirthsj/dirthsj.github.io.svg";
+    private const string TRAVIS_IMG_BRANCH = "blazor";
+    private const long TICKS_PER_MINUTE = 10_000_000 * 60;
+    private string _cacheBuster = (DateTime.Now.Ticks / TICKS_PER_MINUTE).ToString();
+    private string _travisImageUrl;
+
+    protected override void OnInitialized()
+    {
+        var builder = new UriBuilder(TRAVIS_IMG_BASE_URL);
+        builder.Port = -1;
+        var query = System.Web.HttpUtility.ParseQueryString(builder.Query);
+        query["branch"] = TRAVIS_IMG_BRANCH;
+        query["cache"] = _cacheBuster;
+        builder.Query = query.ToString();
+        _travisImageUrl = builder.ToString();
+    }
+}
