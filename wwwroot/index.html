@@ -10,6 +10,7 @@
     <base href="/" />
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.4.456/web/pdf_viewer.min.css">
     <link href="manifest.json" rel="manifest" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
 </head>
@@ -24,12 +25,15 @@
     </div>
     <script src="https://cdn.jsdelivr.net/gh/google/brotli/js/decode.min.js"></script>
     <script src="_framework/blazor.webassembly.js" autostart="false"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.4.456/build/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.4.456/web/pdf_viewer.min.js"></script>
+    <script src="js/pdfviewer.js"></script>
     <script>
         Blazor.start({
-            loadBootResource: function(type, name, defaultUri, integrity) {
+            loadBootResource: function (type, name, defaultUri, integrity) {
                 if (type !== 'dotnetjs' && location.hostname !== 'localhost') {
-                    return (async function() {
-                        const response = await fetch(defaultUri + '.br', {cache: 'no-cache'});
+                    return (async function () {
+                        const response = await fetch(defaultUri + '.br', { cache: 'no-cache' });
                         if (!response.ok) {
                             throw new Error(response.statusText);
                         }
