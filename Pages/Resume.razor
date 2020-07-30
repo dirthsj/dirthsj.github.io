@@ -1,21 +1,36 @@
 ﻿@page "/resume"
-@inject IJSRuntime JSRuntime;
+@using System.Text.Json.Serialization;
+@inject IJSRuntime JSRuntime
+@inject HttpClient http
 
 
-<h5>Resume - <a href=@ResumePdf download>Download</a></h5>
+<h5>Resume - <a href=@ResumeUrl download>Download</a></h5>
 
 <div id=@PdfContainerId class="pdfViewer singlePageView"></div>
 
 
 @code {
-    private const string ResumePdf = "/assets/resume.pdf";
+    private const string ResumeUrl = "https://github.com/dirthsj/Resume/releases/latest/download/main.pdf";
     private const string PdfContainerId = "viewerContainer";
+
+    private Task<HttpResponseMessage> getResume;
+
+    protected override void OnInitialized()
+    {
+        var msg = new HttpRequestMessage(HttpMethod.Get, $"https://cors-anywhere.herokuapp.com/{ResumeUrl}");
+        msg.Headers.Add("Accept", "application/octet-stream");
+        msg.Headers.Add("Origin", "https://stevendirth.com");
+        getResume = http.SendAsync(msg);
+    }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
-            await JSRuntime.InvokeVoidAsync("drawPdf", PdfContainerId, ResumePdf);
+            var resume = await getResume;
+            var content = resume.Content;
+            var bytes = await content.ReadAsByteArrayAsync();
+            await JSRuntime.InvokeVoidAsync("drawPdf", PdfContainerId, bytes);
         }
     }
 }

@@ -24,14 +24,10 @@ function getRecommendedScale() {
     return recommendedScale;
 }
 
-window.drawPdf = function (viewerContainerId, documentPath) {
+window.drawPdf = function (viewerContainerId, binaryDocument) {
     var container = document.getElementById(viewerContainerId);
     var eventBus = new pdfjsViewer.EventBus();
-    var loadingTask = pdfjsLib.getDocument({
-        url: documentPath,
-        cMapUrl: CMAP_URL,
-        cMapPackad: CMAP_PACKED,
-    });
+    var loadingTask = pdfjsLib.getDocument(convertBase64ToBinary(binaryDocument));
 
     var scale = this.getRecommendedScale();
 
@@ -51,5 +47,17 @@ window.drawPdf = function (viewerContainerId, documentPath) {
         });
     });
 }
+
+function convertBase64ToBinary(base64) {
+    var raw = window.atob(base64);
+    var rawLength = raw.length;
+    var array = new Uint8Array(new ArrayBuffer(rawLength));
+
+    for (var i = 0; i < rawLength; i++) {
+        array[i] = raw.charCodeAt(i);
+    }
+    return array;
+}
+
 
 
