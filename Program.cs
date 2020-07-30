@@ -18,6 +18,13 @@ namespace PersonalWebsiteBlazor
             builder.Services.AddBlazorDownloadFile();
 
             await builder.Build().RunAsync();
+
+            RandomReferenceSoBlazorLinksAssmebly();
+        }
+
+        public static string RandomReferenceSoBlazorLinksAssmebly()
+        {
+            return typeof(IBlazorDownloadFileService).Name;
         }
     }
 }
