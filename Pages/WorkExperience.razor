@@ -1,3 +1,11 @@
 ﻿@page "/work"
+@inject HttpClient Http
+@using PersonalWebsiteBlazor.Models;
 
-<h1>Under Construction</h1>
+<PostElement Posts="@_posts" />
+
+@code {
+    private static Post[] _posts;
+
+    protected override async Task OnInitializedAsync() => _posts ??= await Http.GetFromJsonAsync<Post[]>("/assets/Work.json");
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Intern at Corteva Agriscience",
+    "body": "I worked as an intern at Corteva Agriscience during summer of 2019 and returned for a second internship during the summer of 2020. I primarily worked with .NET Core and Angular, as well as many Azure services, such as Functions, SignalR, Blob Storage, and Cosmos.",
+    "links": {
+      "Corteva Agriscience": "https://www.corteva.com/",
+      ".NET Core": "https://docs.microsoft.com/en-us/dotnet/core/",
+      "Angular": "https://angular.io/",
+      "Azure": "https://azure.microsoft.com/en-us/"
+    }
+  },
+  {
+    "title": "Intern at Sears Seating",
+    "body": "I worked as an intern at Sears Seating during the summer of 2018 in the test department. Despite the majority of the internship being focused on non-programming tasks, I did automate part of my job by creating a tool using Qt (C++) to search for and open documents within a deeply nested folder structure. This saved me around 5 clicks per document.",
+    "links": {
+      "Sears Seating": "https://www.searsseating.com/",
+      "Qt": "https://www.qt.io/"
+    }
+  },
+  {
+    "title": "Earlier Work",
+    "body": "I worked serveral summer jobs, including an internship or two, prior to 2018. However, none had any programming-related content, so I won't elaborate here. If you want to learn more about them, check out my LinkedIn profile.",
+    "links": {
+      "LinkedIn": "https://www.linkedin.com/in/stevendirth"
+    }
+  }
+]
