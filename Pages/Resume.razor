@@ -1,10 +1,11 @@
 ﻿@page "/resume"
-@using System.Text.Json.Serialization;
+@using BlazorDownloadFile;
 @inject IJSRuntime JSRuntime
 @inject HttpClient http
+@inject IBlazorDownloadFileService blazorDownloadFileService
 
 
-<h5>Resume - <a href=@ResumeUrl download>Download</a></h5>
+<h5>Resume <button class="btn btn-primary" @onclick="Download">Download</button></h5>
 
 <div id=@PdfContainerId class="pdfViewer singlePageView"></div>
 
@@ -13,24 +14,35 @@
     private const string ResumeUrl = "https://github.com/dirthsj/Resume/releases/latest/download/main.pdf";
     private const string PdfContainerId = "viewerContainer";
 
-    private Task<HttpResponseMessage> getResume;
+    private static Task<HttpResponseMessage> getResume;
 
     protected override void OnInitialized()
     {
         var msg = new HttpRequestMessage(HttpMethod.Get, $"https://cors-anywhere.herokuapp.com/{ResumeUrl}");
         msg.Headers.Add("Accept", "application/octet-stream");
         msg.Headers.Add("Origin", "https://stevendirth.com");
-        getResume = http.SendAsync(msg);
+        getResume ??= http.SendAsync(msg);
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
-            var resume = await getResume;
-            var content = resume.Content;
-            var bytes = await content.ReadAsByteArrayAsync();
+            var bytes = await GetResume();
             await JSRuntime.InvokeVoidAsync("drawPdf", PdfContainerId, bytes);
         }
+    }
+
+    protected async Task Download()
+    {
+        var bytes = await GetResume();
+        await blazorDownloadFileService.DownloadFile("Steven Dirth's Resume.pdf", bytes, "application/pdf");
+    }
+
+    private async Task<byte[]> GetResume()
+    {
+        var resume = await getResume;
+        var content = resume.Content;
+        return await content.ReadAsByteArrayAsync();
     }
 }

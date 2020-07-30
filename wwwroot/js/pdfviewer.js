@@ -1,7 +1,4 @@
-﻿
-pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@2.4.456/build/pdf.worker.min.js"
-var CMAP_URL = "https://cdn.jsdelivr.net/npm/pdfjs-dist@2.4.456/cmaps/"
-var CMAP_PACKED = true;
+﻿pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@2.4.456/build/pdf.worker.min.js"
 
 const SCALE_MAPPING = new Map([
     [1024, 0.9],
