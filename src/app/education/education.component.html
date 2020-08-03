@@ -1,0 +1,14 @@
+<div class="p-grid max-width">
+  <div class="p-col card" *ngFor="let entry of data">
+    <p-card [header]="entry.title">
+      {{entry.body}}
+      <p-footer>
+        <p-button *ngFor="let link of entry.links | keyvalue"
+                  [label]="link.key"
+                  (onClick)="window.open(link.value, 'blank')"
+                  [style]="{'margin-right': '10px', 'margin-bottom': '10px'}">
+        </p-button>
+      </p-footer>
+    </p-card>
+  </div>
+</div>
