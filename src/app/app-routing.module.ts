@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'education', component: EducationComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'resume', component: ResumeComponent },
-  { path: 'work', component: WorkComponent }
+  { path: 'work', component: WorkComponent },
+  { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({
