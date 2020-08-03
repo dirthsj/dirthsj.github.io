@@ -1,4 +1,4 @@
-dist: trusty
+dist: bionic
 sudo: false
 
 language: node_js
@@ -24,7 +24,7 @@ deploy:
   github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep_history: false
   local_dir: dist/StevenDirth/
-  target_branch: angular-build-testing
+  target_branch: master
   fqdn: https://stevendirth.com
   on:
     branch: angular
