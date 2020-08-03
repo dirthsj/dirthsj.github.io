@@ -17,6 +17,7 @@ before_script:
 
 script:
   - ng build --prod --deploy-url https://stevendirth.com/
+  - gulp purifyCSS
 
 deploy:
   provider: pages
