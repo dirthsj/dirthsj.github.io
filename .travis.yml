@@ -16,7 +16,7 @@ before_script:
   - npm install -g @angular/cli@10
 
 script:
-  - ng build --prod --deploy-url https://stevendirth.com
+  - ng build --prod --deploy-url https://stevendirth.com/
 
 deploy:
   provider: pages
@@ -25,6 +25,6 @@ deploy:
   keep_history: false
   local_dir: dist/StevenDirth/
   target_branch: master
-  fqdn: https://stevendirth.com
+  fqdn: stevendirth.com
   on:
     branch: angular
