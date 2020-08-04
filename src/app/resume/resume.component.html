@@ -1,9 +1,13 @@
-<div style="position:fixed;height: 100%; width:99%">
-  <ng2-pdfjs-viewer
-    [pdfSrc]="RESUME_URL"
-    [openFile]="false"
-    [find]="false"
-    pagemode="none"
-    [viewBookmark]="false">
-  </ng2-pdfjs-viewer>
-</div>
+<br>
+<p-button
+  label="Download"
+  (onClick)="download()"
+  class="download">
+</p-button>
+<pdf-viewer
+  [src]="resume"
+  [render-text]="true"
+  [show-borders]="true"
+  style="display:block">
+</pdf-viewer>
+

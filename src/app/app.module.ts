@@ -15,8 +15,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { CsmComponent } from './csm/csm.component';
 import { EducationComponent } from './education/education.component';
 import { ResumeComponent } from './resume/resume.component';
-import {PdfJsViewerModule} from 'ng2-pdfjs-viewer';
-import {HttpClientModule} from '@angular/common/http';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -37,7 +37,7 @@ import {HttpClientModule} from '@angular/common/http';
     TabMenuModule,
     CardModule,
     ButtonModule,
-    PdfJsViewerModule
+    PdfViewerModule
   ],
   providers: [
     { provide: Window, useValue: window }
