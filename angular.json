@@ -22,8 +22,7 @@
             "assets": [
               "src/favicon.ico",
               "src/404.html",
-              "src/assets",
-              { "glob": "**/*", "input": "node_modules/ng2-pdfjs-viewer/pdfjs", "output": "/assets/pdfjs" }
+              "src/assets"
             ],
             "styles": [
               "src/styles.css",
