@@ -1,3 +1,10 @@
-<p-tabMenu [model]="items"></p-tabMenu>
+<div class="p-d-none p-d-md-inline-flex">
+  <p-tabMenu [model]="items"></p-tabMenu>
+</div>
+<div class="p-d-md-none">
+  <p-button type="text" (click)="menu.toggle($event)" [icon]="menu.visible ? 'pi pi-times' : 'pi pi-bars'" label="Menu"></p-button>
+</div>
+<p-menu #menu [popup]="true" [model]="items"></p-menu>
+
 
 <router-outlet></router-outlet>

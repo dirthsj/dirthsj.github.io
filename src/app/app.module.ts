@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
+import { MenuModule } from 'primeng/menu';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,7 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     TabMenuModule,
     CardModule,
     ButtonModule,
-    PdfViewerModule
+    PdfViewerModule,
+    MenuModule
   ],
   providers: [
     { provide: Window, useValue: window }
