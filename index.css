@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;500&display=swap');
+
+:root {
+    --text-primary: #ccc;
+    --text-emphasis: #eee;
+    --surface-primary-a: #056;
+    --surface-primary-b: #045;
+    --surface-primary-c: #067;
+    --surface-emphasis: #077;
+    --navbar-content-height: 97px;
+    --navbar-content-padding: 30px;
+    --heading-font-size: 2rem;
+    --subheading-font-size: 1.5rem;
+    --content-font-size: 1.25rem;
+}
+
+nav > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+}
+
+nav > ul > li {
+    float: left;
+}
+
+nav > ul > li > a {
+    font-size: var(--heading-font-size);
+    display: block;
+    color: var(--text-primary);
+    text-align: center;
+    padding: var(--navbar-content-padding);
+    text-decoration: none;
+}
+
+nav > ul > li > a:hover {
+    background-color: var(--surface-emphasis);
+    color: var(--text-emphasis);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: var(--navbar-content-height);
+    background-color: var(--surface-primary-a);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    margin: 0;
+    background-color: var(--surface-primary-b);
+    color: var(--text-primary);
+}
+
+.card {
+    max-width: 100ch;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0.75em;
+    margin-top: 0.75em;
+    background-color: var(--surface-primary-a);
+    padding: 20px;
+    font-size: var(--content-font-size);
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.25);
+    border-radius: 3px;
+    text-align: justify;
+}
+
+section:last-of-type {
+    min-height: 100vh;
+}
+
+section::before {
+    content: '';
+    display: block;
+    height: var(--navbar-content-height);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section:not(:first-of-type) {
+    margin-top: calc(-1 * var(--navbar-content-height));
+}
+
+h1 {
+    font-size: var(--heading-font-size);
+    position: relative;
+    background-color: var(--surface-primary-b);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+hr {
+    font-size: var(--content-font-size);
+    border: 1px solid var(--surface-primary-c);
+    width: calc(100ch + 30px);
+    margin: 0;
+    transform: translateY(2.3em);
+    z-index: -1;
+    margin-bottom: -2px;
+}
+
+.styleSelector {
+    float: right;
+}
+
+@media only screen and (max-width: 1100px) {
+    .styleSelector {
+        display: none;
+    }
+  }
+
+.styleSelector > input {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.styleSelector > label {
+    display: inline-block;
+    font-size: var(--heading-font-size);
+    color: var(--text-primary);
+    text-align: center;
+    padding: var(--navbar-content-padding);
+    text-decoration: none;
+    margin-left: -4px;
+}
+
+.styleSelector > label:hover {
+    background-color: var(--surface-emphasis);
+    color: var(--text-emphasis);
+    cursor: pointer;
+}
+
+.styleSelector > input:checked + label {
+    background-color: var(--surface-emphasis);
+    color: var(--text-emphasis);
+}
+
+.transition-ease, .transition-ease * {
+    transition: background-color 500ms ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+span.code {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 2px 2px 2px 2px;
+    border-radius: 7px;
+}
+
+.card > p:first-child {
+    margin-top: 0;
+}
+
+.card > p:last-child {
+    margin-bottom: 0;
+}
+
+.card > p > a {
+    color: var(--text-primary);
+}
+
+.card > p > a:hover {
+    color: var(--text-emphasis);
+}
+
+.card > p {
+    font-size: var(--content-font-size);
+}
+
+h2 {
+    font-size: var(--subheading-font-size);
+    margin-top: 0;
+}
