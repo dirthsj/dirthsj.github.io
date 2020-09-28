@@ -73,6 +73,7 @@ nav {
     position: fixed;
     top: 25%;
     left: 0;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .styleSelector > input {
