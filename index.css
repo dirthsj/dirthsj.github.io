@@ -49,6 +49,108 @@ nav {
     height: var(--navbar-content-height);
     background-color: var(--surface-primary-a);
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 700px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+    :root {
+        --navbar-content-height: 0;
+    }
+}
+
+.styleSelector {
+    display: flex;
+    background-color: var(--surface-primary-a);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    flex-direction: column;
+    position: fixed;
+    top: 25%;
+    left: 0;
+}
+
+.styleSelector > input {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.styleSelector > label {
+    font-size: var(--heading-font-size);
+    color: var(--text-primary);
+    text-align: center;
+    padding: var(--navbar-content-padding);
+    text-decoration: none;
+    margin-left: -4px;
+}
+
+.styleSelector > label:last-of-type {
+    border-bottom-right-radius: 10px;
+}
+
+.styleSelector > label:first-of-type {
+    border-top-right-radius: 10px;
+}
+
+.styleSelector > label:hover {
+    background-color: var(--surface-emphasis);
+    color: var(--text-emphasis);
+    cursor: pointer;
+}
+
+.styleSelector > input:checked + label {
+    background-color: var(--surface-emphasis);
+    color: var(--text-emphasis);
+}
+
+.sidenav {
+    height: 30em;
+    width: 120px;
+    position: fixed;
+    z-index: 1;
+    top: 25%;
+    right: 0;
+    background-color: var(--surface-primary-a);
+    overflow-x: hidden;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.sidenav > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidenav > ul > li > a {
+    font-size: 6em;
+    color: var(--text-primary);
+    transition: font-size 200ms;
+}
+
+.sidenav > ul > li > a:hover {
+    font-size: 7em;
+    color: var(--text-emphasis);
+    text-shadow: 5px 5px 5px black;
+}
+
+@media only screen and (max-width: 1300px) {
+    .styleSelector, .sidenav {
+        display: none;
+    }
 }
 
 body {
@@ -109,42 +211,6 @@ hr {
     margin-bottom: -2px;
 }
 
-.styleSelector {
-    float: right;
-}
-
-@media only screen and (max-width: 1100px) {
-    .styleSelector {
-        display: none;
-    }
-  }
-
-.styleSelector > input {
-    position: fixed;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.styleSelector > label {
-    display: inline-block;
-    font-size: var(--heading-font-size);
-    color: var(--text-primary);
-    text-align: center;
-    padding: var(--navbar-content-padding);
-    text-decoration: none;
-    margin-left: -4px;
-}
-
-.styleSelector > label:hover {
-    background-color: var(--surface-emphasis);
-    color: var(--text-emphasis);
-    cursor: pointer;
-}
-
-.styleSelector > input:checked + label {
-    background-color: var(--surface-emphasis);
-    color: var(--text-emphasis);
-}
 
 .transition-ease, .transition-ease * {
     transition: background-color 500ms ease;
