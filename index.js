@@ -42,8 +42,14 @@ let styles = {
 }
 
 let root = document.querySelector(':root');
+let isInitialLoad = true;
 
 function setStyle(style) {
+    if (!isInitialLoad) {
+        document.querySelector('body').classList.add('transition-ease');
+        transitionClassAdded = true;
+    }
+
     const currentStyle = styles[style];
 
     currentStyle.forEach((value, key) => {
@@ -60,6 +66,5 @@ document.querySelectorAll("input[name='style']").forEach((input) => {
 let currentStyle = localStorage.getItem('currentStyle') || 'green';
 
 setStyle(currentStyle);
+isInitialLoad = false;
 document.querySelector(`input[value='${currentStyle}']`).checked = true;
-
-setTimeout(() => document.querySelector('body').classList.add('transition-ease'), 100);
