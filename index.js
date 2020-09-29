@@ -68,3 +68,11 @@ let currentStyle = localStorage.getItem('currentStyle') || 'green';
 setStyle(currentStyle);
 isInitialLoad = false;
 document.querySelector(`input[value='${currentStyle}']`).checked = true;
+
+const urlParams = new URLSearchParams(window.location.search);
+const doRoundCorners = urlParams.get('corners') === 'rounded';
+if (doRoundCorners) {
+    document.querySelectorAll('.card').forEach((card) => {
+        card.style.setProperty('border-radius', '10px');
+    })
+}
