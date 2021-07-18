@@ -2,42 +2,42 @@ let styles = {
     green: new Map([
         ['--text-primary', '#ccc'],
         ['--text-emphasis', '#eee'],
-        ['--surface-primary-a', '#056'],
+        ['--surface-primary-a', '#0565'],
         ['--surface-primary-b', '#045'],
-        ['--surface-primary-c', '#067'],
-        ['--surface-emphasis', '#077']
+        ['--surface-primary-c', '#0675'],
+        ['--surface-emphasis', '#0775']
     ]),
     blue: new Map([
         ['--text-primary', '#ccc'],
         ['--text-emphasis', '#eee'],
-        ['--surface-primary-a', '#1f2d40'],
+        ['--surface-primary-a', '#1f2d4055'],
         ['--surface-primary-b', '#17212f'],
-        ['--surface-primary-c', '#304562'],
-        ['--surface-emphasis', '#64B5F6']
+        ['--surface-primary-c', '#30456255'],
+        ['--surface-emphasis', '#64B5F655']
     ]),
     gray: new Map([
         ['--text-primary', '#555'],
         ['--text-emphasis', '#000'],
-        ['--surface-primary-a', '#ddd'],
+        ['--surface-primary-a', '#ddd8'],
         ['--surface-primary-b', '#ccc'],
-        ['--surface-primary-c', '#aaa'],
-        ['--surface-emphasis', '#bbb']
+        ['--surface-primary-c', '#aaa8'],
+        ['--surface-emphasis', '#bbb8']
     ]),
     red: new Map([
         ['--text-primary', '#ccc'],
         ['--text-emphasis', '#eee'],
-        ['--surface-primary-a', '#4d000d'],
+        ['--surface-primary-a', '#4d000d55'],
         ['--surface-primary-b', '#29010a'], 
-        ['--surface-primary-c', '#a81d2e'],
-        ['--surface-emphasis', '#f2375e']
+        ['--surface-primary-c', '#a81d2e55'],
+        ['--surface-emphasis', '#f2375e55']
     ]),
     purple: new Map([
         ['--text-primary', '#ccc'],
         ['--text-emphasis', '#eee'],
-        ['--surface-primary-a', '#291f43'],
+        ['--surface-primary-a', '#291f4355'],
         ['--surface-primary-b', '#190f33'],
-        ['--surface-primary-c', '#3f355c'],
-        ['--surface-emphasis', '#4c4e88']
+        ['--surface-primary-c', '#3f355c55'],
+        ['--surface-emphasis', '#4c4e8855']
     ])
 }
 
